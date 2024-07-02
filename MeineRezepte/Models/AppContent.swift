@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Content {
+enum AppContent {
     static let correctUsername = "User1"
     static let correctPassword = "12345"
     
