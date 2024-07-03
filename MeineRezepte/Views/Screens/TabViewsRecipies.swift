@@ -24,7 +24,7 @@ struct TabViewsRecipies: View {
             
             ShoppingList(ingredientsList: $ingredientsList)
                 .tabItem {
-                    Image(systemName: "case")
+                    Image(systemName: "bag")
                     Text("Einkaufsliste")
                 }
                 .badge(ingredientsList.count)

@@ -11,18 +11,42 @@ struct ShoppingList: View {
     
     @Binding var ingredientsList:[String]
     
-    
     var body: some View {
-        List{
-            ForEach(ingredientsList , id : \.self){ ingredient in
+        
+        NavigationStack{
+            
+            VStack{
                 
-                Text("\(ingredient)")
-                
+                if ingredientsList.isEmpty{
+                   EmptyListElements()
+                    
+                }else{
+                    
+                    List{
+                        ForEach(ingredientsList , id : \.self){ ingredient in
+                            Text("\(ingredient)")
+                        }
+                        .onDelete(perform: { indexSet in
+                            ingredientsList.remove(atOffsets: indexSet)
+                        })
+                    }
+                }
+            }
+            .navigationTitle("Einkaufsliste")
+            .toolbar{
+                ToolbarItem{
+                    Button(action: {
+                        ingredientsList.sort()
+                        
+                    }, label: {
+                        Image(systemName: "arrow.down")
+                    })
+                }
             }
         }
     }
 }
 
 #Preview {
-    ShoppingList(ingredientsList: .constant(["Äpfel", "Mehl", "Zucker", "Eier", "Zimt"]))
+    ShoppingList(ingredientsList: .constant([]))
 }
