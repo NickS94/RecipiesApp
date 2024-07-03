@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var errorMessageUserName:ErrorType = .none
+    @State var errorMessagePassword:ErrorType = .none
+    
     
     var body: some View {
      
-        LoginView()
+        LoginView(errorMessageUserName:errorMessageUserName , errorMessagePassword: errorMessagePassword)
         
  
     }

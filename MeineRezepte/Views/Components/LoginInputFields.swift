@@ -11,40 +11,30 @@ struct LoginInputFields: View {
     
     @Binding var username : String
     @Binding var password : String
-    @Binding var errorMessage : ErrorType?
+    @Binding var errorMessageUserName : ErrorType
+    @Binding var errorMessagePassword : ErrorType
     var body: some View {
         
       VStack(alignment: .leading) {
       
           
         TextField("Benutzername", text: $username)
-          .padding()
-          .background(Color.white.opacity(0.5))
-          .cornerRadius(5)
-        
-        if let error = errorMessage, error == .emptyUsername || error == .incorrectUsername {
-          Text(error.rawValue)
-            .foregroundColor(.red)
-            .font(.caption)
-            .padding(.leading)
-        }
+          .clipShape(RoundedRectangle(cornerRadius: 12))
+          .fieldsErrorModifier(errorMessage: errorMessageUserName)
+          .textFieldStyle(.roundedBorder)
+          .padding(5)
         
           
         SecureField("Passwort", text: $password)
-          .padding()
-          .background(Color.white.opacity(0.5))
-          .cornerRadius(5)
-       
-        if let error = errorMessage, error == .emptyPassword || error == .incorrectPassword {
-          Text(error.rawValue)
-            .foregroundColor(.red)
-            .font(.caption)
-            .padding(.leading)
-        }
+          .clipShape(RoundedRectangle(cornerRadius: 12))
+          .fieldsErrorModifier(errorMessage: errorMessagePassword)
+          .textFieldStyle(.roundedBorder)
+          .padding(5)
+   
       }
       .padding()
     }
   }
   #Preview {
-      LoginInputFields(username: .constant(""), password: .constant(""), errorMessage: .constant(.none))
+      LoginInputFields(username: .constant(""), password: .constant(""), errorMessageUserName:  .constant(.emptyUsername),errorMessagePassword:.constant(.emptyPassword))
   }

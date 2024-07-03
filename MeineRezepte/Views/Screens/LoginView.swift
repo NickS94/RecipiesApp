@@ -11,7 +11,8 @@ struct LoginView: View {
     
     @State var username: String = ""
     @State var password: String = ""
-    @State var errorMessage: ErrorType?
+    @State var errorMessageUserName: ErrorType
+    @State var errorMessagePassword: ErrorType
     @State var isLoggedIn = false
     
     
@@ -19,13 +20,13 @@ struct LoginView: View {
         ZStack{
             BackgroundImage()
 
-            VStack{
+            VStack(spacing:30){
                 TitleView()
                 
-                LoginInputFields(username: $username, password: $password, errorMessage: $errorMessage)
-                    .frame(width: 350)
+                LoginInputFields(username: $username, password: $password, errorMessageUserName: $errorMessageUserName,errorMessagePassword:$errorMessagePassword)
+                    .frame(width: 390)
                 
-                LoginButton(errorMessage: $errorMessage, username: $username, password: $password, isLoggedIn: $isLoggedIn)
+                LoginButton(errorMessageUserName: $errorMessageUserName,errorMessagePassword: $errorMessagePassword, username: $username, password: $password, isLoggedIn: $isLoggedIn)
     
             }
             .fullScreenCover(isPresented: $isLoggedIn) {
@@ -37,5 +38,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView( errorMessage:.none)
+    LoginView(errorMessageUserName: .none, errorMessagePassword: .none)
 }

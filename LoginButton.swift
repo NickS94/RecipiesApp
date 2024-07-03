@@ -9,45 +9,49 @@ import SwiftUI
 
 struct LoginButton: View {
     
-    @Binding var errorMessage :ErrorType?
+    @Binding var errorMessageUserName :ErrorType
+    @Binding var errorMessagePassword :ErrorType
     @Binding var username: String
     @Binding var password: String
     @Binding var isLoggedIn :Bool
     
     
     var body: some View {
-      Button(action: {
-        userNamePassWordTesting()
-      }) {
-        Text("Einloggen")
-          .foregroundColor(.white)
-          .frame(width: 200,height: 13)
-          .padding()
-          .background(Color.blue)
-          .cornerRadius(20)
-      }
-      .padding(.top, 20)
+        
+        Button(action: {
+            userNamePassWordTesting()
+        }) {
+            
+            Label("Einloggen", systemImage: "fork.knife")
+            
+        }
+        .buttonStyle(.borderedProminent)
+        .padding(.top, 20)
     }
     
-    private func userNamePassWordTesting() {
-      errorMessage = nil
-       
-     
-      if username.isEmpty {
-        errorMessage = .emptyUsername
-      } else if username != AppContent.correctUsername {
-        errorMessage = .incorrectUsername
-      } else if password.isEmpty {
-        errorMessage = .emptyPassword
-      } else if password != AppContent.correctPassword {
-        errorMessage = .incorrectPassword
-      } else {
-   
-        isLoggedIn = true
-      }
+    func userNamePassWordTesting() {
+        
+        
+        if username.isEmpty {
+            errorMessageUserName = .emptyUsername
+        } else if username != AppContent.correctUsername {
+            errorMessageUserName = .incorrectUsername
+        }
+        
+        
+        if password.isEmpty {
+            errorMessagePassword = .emptyPassword
+        } else if password != AppContent.correctPassword {
+            errorMessagePassword = .incorrectPassword
+        }
+        
+        if password == AppContent.correctPassword && username == AppContent.correctUsername{
+            isLoggedIn = true
+        }
+        
     }
-  }
+}
 
-  #Preview {
-    LoginButton(errorMessage: .constant(.emptyUsername), username: .constant("String"), password: .constant(""), isLoggedIn: .constant(false))
-  }
+#Preview {
+    LoginButton(errorMessageUserName: .constant(.emptyUsername), errorMessagePassword: .constant(.emptyPassword),username: .constant("String"), password: .constant(""), isLoggedIn: .constant(false))
+}

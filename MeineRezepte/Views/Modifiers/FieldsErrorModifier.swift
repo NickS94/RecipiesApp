@@ -14,34 +14,43 @@ import SwiftUI
 struct FieldsErrorModifier:ViewModifier{
     
     
-    let errorMessage:ErrorType?
+    let errorMessage:ErrorType
     
     func body(content: Content) -> some View {
-       
+        
         
         content
         switch errorMessage {
             
         case .emptyUsername:
             
-            Text("\(errorMessage?.rawValue ?? "")")
-                .font(.system(size: 10))
+            Text("\(errorMessage.rawValue)")
+                .font(.system(size: 14))
                 .foregroundColor(.red)
+                .background(.white)
+            
         case .emptyPassword:
             
-            Text("\(errorMessage?.rawValue ?? "")")
-                .font(.system(size: 10))
+            Text("\(errorMessage.rawValue )")
+                .font(.system(size: 14))
                 .foregroundColor(.red)
+                .background(.white)
+            
         case .incorrectUsername:
             
-            Text("\(errorMessage?.rawValue ?? "")")
-                .font(.system(size: 10))
+            Text("\(errorMessage.rawValue )")
+                .font(.system(size: 14))
                 .foregroundColor(.red)
+                .background(.white)
+            
         case .incorrectPassword:
             
-            Text("\(errorMessage?.rawValue ?? "")")
-                .font(.system(size: 10))
+            Text("\(errorMessage.rawValue )")
+                .font(.system(size: 14))
                 .foregroundColor(.red)
+                .background(.white)
+            
+        
         case .none:
             Text("")
         }
