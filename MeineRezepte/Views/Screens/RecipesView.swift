@@ -12,12 +12,15 @@ struct RecipesView: View {
     
     @Binding var recipes : [Recipe]
     
+    @Binding var ingredientsList:[String]
+    
+    
     var body: some View {
         NavigationStack{
             
             List{
                 ForEach($recipes) { $recipe in
-                    NavigationLink(destination: RecipeDetailView()){
+                    NavigationLink(destination: RecipeDetailView(recipe:$recipe, ingredientsList: $ingredientsList)){
                         RecipeRow(recipe: recipe)
                         
                     }
@@ -55,5 +58,5 @@ struct RecipesView: View {
 
 
 #Preview {
-    RecipesView(recipes: .constant([Recipe(title: "", description: "", ingredients: ["",""], foodImage: .apfelkuchen, date: .now)]))
+    RecipesView(recipes: .constant([Recipe(title: "", description: "", ingredients: ["",""], foodImage: .apfelkuchen, date: .now)]), ingredientsList: .constant(["Spaghetti", "Hackfleisch", "Tomaten", "Zwiebeln", "Knoblauch"]))
 }

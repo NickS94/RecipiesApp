@@ -28,6 +28,7 @@ struct FieldsErrorModifier:ViewModifier{
                 .font(.system(size: 14))
                 .foregroundColor(.red)
                 .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
         case .emptyPassword:
             
@@ -35,6 +36,7 @@ struct FieldsErrorModifier:ViewModifier{
                 .font(.system(size: 14))
                 .foregroundColor(.red)
                 .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
         case .incorrectUsername:
             
@@ -42,6 +44,7 @@ struct FieldsErrorModifier:ViewModifier{
                 .font(.system(size: 14))
                 .foregroundColor(.red)
                 .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
         case .incorrectPassword:
             
@@ -49,7 +52,7 @@ struct FieldsErrorModifier:ViewModifier{
                 .font(.system(size: 14))
                 .foregroundColor(.red)
                 .background(.white)
-            
+                .clipShape(RoundedRectangle(cornerRadius: 10))
         
         case .none:
             Text("")
