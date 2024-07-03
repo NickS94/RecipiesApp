@@ -23,6 +23,9 @@ struct LoginInputFields: View {
           .fieldsErrorModifier(errorMessage: errorMessageUserName)
           .textFieldStyle(.roundedBorder)
           .padding(5)
+          .onChange(of: username){
+              errorMessageUserName = .none
+          }
         
           
         SecureField("Passwort", text: $password)
@@ -30,6 +33,9 @@ struct LoginInputFields: View {
           .fieldsErrorModifier(errorMessage: errorMessagePassword)
           .textFieldStyle(.roundedBorder)
           .padding(5)
+          .onChange(of: password){
+              errorMessagePassword = .none
+          }
    
       }
       .padding()
