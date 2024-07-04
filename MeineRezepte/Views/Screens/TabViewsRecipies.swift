@@ -11,11 +11,12 @@ struct TabViewsRecipies: View {
 
     @State var recipies = AppContent.defaultRecipes
     @State var ingredientsList: [String] = []
+    @State var showSheet  = false
  
     var body: some View {
         TabView{
             
-            RecipesView(recipes: $recipies, ingredientsList: $ingredientsList)
+            RecipesView(recipes: $recipies, ingredientsList: $ingredientsList,showSheet: $showSheet)
                 .tabItem {
                     Image(systemName: "fork.knife")
                     Text("Rezepte")

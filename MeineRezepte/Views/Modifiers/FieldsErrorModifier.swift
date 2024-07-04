@@ -54,8 +54,17 @@ struct FieldsErrorModifier:ViewModifier{
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
         
+        case .emptyRecipeName:
+            
+            Text("\(errorMessage.rawValue)")
+                .font(.system(size: 10))
+                .foregroundColor(.red)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            
         case .none:
             Text("")
+        
         }
         
     }

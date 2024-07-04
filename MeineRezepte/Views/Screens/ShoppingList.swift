@@ -11,6 +11,7 @@ struct ShoppingList: View {
     
     @Binding var ingredientsList:[String]
     
+    
     var body: some View {
         
         NavigationStack{

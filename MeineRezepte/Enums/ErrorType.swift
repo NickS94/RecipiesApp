@@ -11,5 +11,6 @@ enum ErrorType: String{
     case incorrectUsername = "Der Benutzername ist nicht korrekt."
     case emptyPassword = "Es muss ein Passwort eingegeben werden."
     case incorrectPassword = "Das Passwort ist nicht korrekt."
+    case emptyRecipeName = "Bitte Namen eingeben"
     case none
 }

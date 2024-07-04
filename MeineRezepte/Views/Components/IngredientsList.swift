@@ -21,7 +21,7 @@ struct IngredientsList: View {
                 
                 Text("\(ingredient)")
                 
-                Image(systemName: ingredientsList.contains{$0 == ingredient} ? "minus.circle" : "plus.circle")
+                Image(systemName: ingredientsList.contains{$0 == ingredient} ? "minus.circle.fill" : "plus.circle")
                     .font(.system(size: 20))
                     .foregroundStyle(.blue)
                     .onTapGesture {

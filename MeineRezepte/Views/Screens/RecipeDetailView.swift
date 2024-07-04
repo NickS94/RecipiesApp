@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeDetailView: View {
     
     @Binding var recipe:Recipe
+    
     @Binding var ingredientsList:[String]
 
     var body: some View {
@@ -40,16 +41,10 @@ struct RecipeDetailView: View {
                     })
                 }
             }
-            .padding()
+            
         }
     }
-    
-    
 }
-
-
-
-
 
 #Preview {
     RecipeDetailView(recipe: .constant(.init(title:"Apple pie", description: "Ein leckerer Apfelkuchen für gemütliche Nachmittage.", ingredients: ["Äpfel", "Mehl", "Zucker", "Eier", "Zimt"], foodImage: .apfelkuchen, date: .now)), ingredientsList: .constant(["","",""]))

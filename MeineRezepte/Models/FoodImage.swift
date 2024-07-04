@@ -18,5 +18,5 @@ enum FoodImage: String, CaseIterable {
     case kaiserschmarrn = "kaiserschmarrn"
     case rindergulasch = "rindergulasch"
     case schokoladenkuchen = "schokoladenkuchen"
-    case none
+    case none 
 }

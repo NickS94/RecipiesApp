@@ -14,6 +14,7 @@ struct RecipesView: View {
     
     @Binding var ingredientsList:[String]
     
+    @Binding var showSheet : Bool
     
     var body: some View {
         NavigationStack{
@@ -44,13 +45,17 @@ struct RecipesView: View {
             .toolbar{
                 ToolbarItem{
                     Button {
-                        
+                        showSheet = true
                     } label: {
                         Image(systemName: "plus")
                             .font(.title)
                     }
                 }
             }
+            .sheet(isPresented: $showSheet) {
+                NewRecipeView(recipes: $recipes, showSheet: $showSheet)
+            }
+            
         }
         
     }
@@ -58,5 +63,5 @@ struct RecipesView: View {
 
 
 #Preview {
-    RecipesView(recipes: .constant([Recipe(title: "", description: "", ingredients: ["",""], foodImage: .apfelkuchen, date: .now)]), ingredientsList: .constant(["Spaghetti", "Hackfleisch", "Tomaten", "Zwiebeln", "Knoblauch"]))
+    RecipesView(recipes: .constant([Recipe(title: "", description: "", ingredients: ["",""], foodImage: .apfelkuchen, date: .now)]), ingredientsList: .constant(["Spaghetti", "Hackfleisch", "Tomaten", "Zwiebeln", "Knoblauch"]), showSheet: .constant(false))
 }
