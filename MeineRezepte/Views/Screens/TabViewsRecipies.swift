@@ -9,9 +9,11 @@ import SwiftUI
 
 struct TabViewsRecipies: View {
 
-    @State var recipies = AppContent.defaultRecipes
-    @State var ingredientsList: [String] = []
-    @State var showSheet  = false
+    
+    @Binding var recipies: [Recipe]
+    @Binding var ingredientsList: [String]
+    @Binding var showSheet:Bool
+    @Binding var isLoggedIn:Bool
  
     var body: some View {
         TabView{
@@ -30,7 +32,7 @@ struct TabViewsRecipies: View {
                 }
                 .badge(ingredientsList.count)
             
-            Text("Last tab")
+            SettingsView(isLoggedIn: $isLoggedIn)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Einstellungen")
@@ -42,5 +44,5 @@ struct TabViewsRecipies: View {
 }
 
 #Preview {
-    TabViewsRecipies()
+    TabViewsRecipies(recipies: .constant(.init()), ingredientsList: .constant(.init()), showSheet: .constant(false),isLoggedIn: .constant(false))
 }

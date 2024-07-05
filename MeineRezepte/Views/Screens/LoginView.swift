@@ -9,18 +9,23 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var errorMessageUserName: ErrorType
-    @State var errorMessagePassword: ErrorType
-    @State var isLoggedIn = false
+    @Binding var username: String
+    @Binding var password: String
+    @Binding var errorMessageUserName: ErrorType
+    @Binding var errorMessagePassword: ErrorType
+    
+    
+    @Binding var isLoggedIn :Bool
+    @Binding var recipies:[Recipe]
+    @Binding var ingredientsList:[String]
+    @Binding var showSheet:Bool
     
     
     var body: some View {
         ZStack{
             BackgroundImage()
 
-            VStack(spacing:30){
+            VStack(){
                 TitleView()
                 
                 LoginInputFields(username: $username, password: $password, errorMessageUserName: $errorMessageUserName,errorMessagePassword:$errorMessagePassword)
@@ -30,7 +35,7 @@ struct LoginView: View {
     
             }
             .fullScreenCover(isPresented: $isLoggedIn) {
-                TabViewsRecipies()
+                TabViewsRecipies(recipies: $recipies, ingredientsList: $ingredientsList, showSheet: $showSheet, isLoggedIn: $isLoggedIn)
             }
            
         }
@@ -38,5 +43,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(errorMessageUserName: .none, errorMessagePassword: .none)
+    LoginView(username: .constant(""), password: .constant(""), errorMessageUserName: .constant(.emptyUsername), errorMessagePassword: .constant(.emptyPassword), isLoggedIn: .constant(false), recipies: .constant(.init()), ingredientsList: .constant(.init()), showSheet: .constant(false))
 }
