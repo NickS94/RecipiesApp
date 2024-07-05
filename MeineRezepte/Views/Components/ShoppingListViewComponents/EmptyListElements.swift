@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmptyListElements: View {
     var body: some View {
+        
         VStack{
             Image(systemName: "bag")
                 .foregroundStyle(.gray)

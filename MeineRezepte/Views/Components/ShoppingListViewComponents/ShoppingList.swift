@@ -11,6 +11,7 @@ struct ShoppingList: View {
     
     @Binding var ingredientsList:[String]
     
+    
     var body: some View {
         List{
             ForEach(ingredientsList , id : \.self){ ingredient in
@@ -25,5 +26,5 @@ struct ShoppingList: View {
 }
 
 #Preview {
-    ShoppingList(ingredientsList: Binding<[String]>.constant(["",""]))
+    ShoppingList(ingredientsList: Binding<[String]>.constant(["","","bla"]))
 }

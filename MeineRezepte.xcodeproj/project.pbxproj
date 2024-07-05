@@ -28,6 +28,8 @@
 		038B37172C36D1FF008890FF /* RecipeIngredientsInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B37162C36D1FF008890FF /* RecipeIngredientsInsert.swift */; };
 		038B371B2C38059A008890FF /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B371A2C38059A008890FF /* ShoppingList.swift */; };
 		038B37212C380C0F008890FF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B37202C380C0F008890FF /* SettingsView.swift */; };
+		038B37242C383835008890FF /* SettingsTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B37232C383835008890FF /* SettingsTexts.swift */; };
+		038B37262C383870008890FF /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038B37252C383870008890FF /* LogoutButton.swift */; };
 		464D51CD2B88A62600D5AFA5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 464D51CC2B88A62600D5AFA5 /* README.md */; };
 		4659D1462B88A2B900CC12EC /* MeineRezepteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D1452B88A2B900CC12EC /* MeineRezepteApp.swift */; };
 		4659D1482B88A2B900CC12EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4659D1472B88A2B900CC12EC /* ContentView.swift */; };
@@ -61,6 +63,8 @@
 		038B37162C36D1FF008890FF /* RecipeIngredientsInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsInsert.swift; sourceTree = "<group>"; };
 		038B371A2C38059A008890FF /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		038B37202C380C0F008890FF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		038B37232C383835008890FF /* SettingsTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTexts.swift; sourceTree = "<group>"; };
+		038B37252C383870008890FF /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
 		464D51CC2B88A62600D5AFA5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4659D1422B88A2B900CC12EC /* MeineRezepte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeineRezepte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4659D1452B88A2B900CC12EC /* MeineRezepteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeineRezepteApp.swift; sourceTree = "<group>"; };
@@ -140,6 +144,15 @@
 			path = ShoppingListViewComponents;
 			sourceTree = "<group>";
 		};
+		038B37222C383814008890FF /* SettingsComponents */ = {
+			isa = PBXGroup;
+			children = (
+				038B37232C383835008890FF /* SettingsTexts.swift */,
+				038B37252C383870008890FF /* LogoutButton.swift */,
+			);
+			path = SettingsComponents;
+			sourceTree = "<group>";
+		};
 		4659D1392B88A2B900CC12EC = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +230,7 @@
 		4659D1632B88A4CE00CC12EC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				038B37222C383814008890FF /* SettingsComponents */,
 				038B371F2C38079D008890FF /* ShoppingListViewComponents */,
 				038B371E2C380775008890FF /* NewRecipeComponents */,
 				038B371D2C380736008890FF /* Recipes&DetailsComponents */,
@@ -299,6 +313,7 @@
 				4659D15C2B88A46C00CC12EC /* Date+Formatting.swift in Sources */,
 				038B36FB2C32DAB8008890FF /* LoginButton.swift in Sources */,
 				038B36ED2C329C3B008890FF /* LoginView.swift in Sources */,
+				038B37242C383835008890FF /* SettingsTexts.swift in Sources */,
 				038B371B2C38059A008890FF /* ShoppingList.swift in Sources */,
 				4659D15F2B88A46C00CC12EC /* AppContent.swift in Sources */,
 				038B36EF2C329F52008890FF /* BackgroundImage.swift in Sources */,
@@ -306,6 +321,7 @@
 				4659D15B2B88A46C00CC12EC /* Recipe.swift in Sources */,
 				038B37092C35689B008890FF /* ShoppingListView.swift in Sources */,
 				038B37112C358590008890FF /* EmptyListElements.swift in Sources */,
+				038B37262C383870008890FF /* LogoutButton.swift in Sources */,
 				038B36FF2C32EB85008890FF /* RecipesView.swift in Sources */,
 				038B37132C36CE80008890FF /* NewRecipeFields.swift in Sources */,
 				038B37032C33FCF2008890FF /* RecipeDetailView.swift in Sources */,

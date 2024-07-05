@@ -18,7 +18,6 @@ struct FieldsErrorModifier:ViewModifier{
     
     func body(content: Content) -> some View {
         
-        
         content
         switch errorMessage {
             

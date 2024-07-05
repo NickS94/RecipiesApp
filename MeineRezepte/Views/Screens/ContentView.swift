@@ -21,12 +21,10 @@ struct ContentView: View {
     
     var body: some View {
         
-        if !isLoggedIn{
-            LoginView(username:$username , password: $password , errorMessageUserName: $errorMessageUserName, errorMessagePassword: $errorMessagePassword, isLoggedIn: $isLoggedIn, recipies: $recipies, ingredientsList: $ingredientsList, showSheet: $showSheet)
-        }else{
-            TabViewsRecipies(recipies: $recipies, ingredientsList: $ingredientsList, showSheet: $showSheet, isLoggedIn: $isLoggedIn)
-        }
-       
+        
+        LoginView(username:$username , password: $password , errorMessageUserName: $errorMessageUserName, errorMessagePassword: $errorMessagePassword, isLoggedIn: $isLoggedIn, recipies: $recipies, ingredientsList: $ingredientsList, showSheet: $showSheet)
+        
+        
     }
 }
 

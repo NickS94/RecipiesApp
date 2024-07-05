@@ -14,6 +14,7 @@ struct RecipeRow: View {
    
     
     var body: some View {
+        
         HStack{
             ZStack{
                 Image(recipe.foodImage.rawValue)
@@ -37,6 +38,7 @@ struct RecipeRow: View {
                     .bold()
                 Text(recipe.description)
                     .font(.system(size: 14))
+                    .lineLimit(3)
                 
                 Text(recipe.date.string)
                     .font(.system(size: 12))

@@ -11,6 +11,7 @@ struct ImagePicker: View {
     
     @Binding var imageSelection :FoodImage
     
+    
     var body: some View {
         Picker("Bild für das Gericht", selection: $imageSelection) {
             
