@@ -23,7 +23,7 @@ struct TabViewsRecipies: View {
                 }
                 .badge(recipies.filter{$0.isFavorite}.count)
             
-            ShoppingList(ingredientsList: $ingredientsList)
+            ShoppingListView(ingredientsList: $ingredientsList)
                 .tabItem {
                     Image(systemName: "bag")
                     Text("Einkaufsliste")

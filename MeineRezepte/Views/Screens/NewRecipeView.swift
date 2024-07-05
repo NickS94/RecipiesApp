@@ -18,9 +18,7 @@ struct NewRecipeView: View {
     @State var showAlert = false
     @Binding var recipes :[Recipe]
     @Binding var showSheet :Bool
-    
-    
-    
+
     var body: some View {
         
         NavigationStack{
@@ -57,6 +55,7 @@ struct NewRecipeView: View {
                 
             }
             .navigationTitle("Neues Rezept")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem{
                     Button(action: {

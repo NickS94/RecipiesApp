@@ -9,19 +9,25 @@ import SwiftUI
 
 struct NewRecipeFields: View {
     
+    
     @Binding var recipeName:String
     @Binding var recipeDescription:String
     @Binding var errorMessage:ErrorType
     
     var body: some View {
-       
-            TextField("Name", text: $recipeName)
-                .fieldsErrorModifier( errorMessage: errorMessage)
-                .onChange(of: recipeName) {
-                    errorMessage = .none
-                }
-            
-            TextEditor(text: $recipeDescription)
+        HStack{
+            VStack(alignment:.leading){
+                TextField("Name", text: $recipeName)
+                    .fieldsErrorModifier( errorMessage: errorMessage)
+                    .onChange(of: recipeName) {
+                        errorMessage = .none
+                    }
+            }
+           
+        }
+        
+        
+        TextEditor(text: $recipeDescription)
         
     }
 }

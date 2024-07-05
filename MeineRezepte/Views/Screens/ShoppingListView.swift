@@ -7,30 +7,21 @@
 
 import SwiftUI
 
-struct ShoppingList: View {
+struct ShoppingListView: View {
     
     @Binding var ingredientsList:[String]
-    
     
     var body: some View {
         
         NavigationStack{
             
-            VStack{
+            Group{
                 
                 if ingredientsList.isEmpty{
                    EmptyListElements()
                     
                 }else{
-                    
-                    List{
-                        ForEach(ingredientsList , id : \.self){ ingredient in
-                            Text("\(ingredient)")
-                        }
-                        .onDelete(perform: { indexSet in
-                            ingredientsList.remove(atOffsets: indexSet)
-                        })
-                    }
+                    ShoppingList(ingredientsList: $ingredientsList)
                 }
             }
             .navigationTitle("Einkaufsliste")
@@ -49,5 +40,5 @@ struct ShoppingList: View {
 }
 
 #Preview {
-    ShoppingList(ingredientsList: .constant([]))
+    ShoppingListView(ingredientsList: .constant([]))
 }
